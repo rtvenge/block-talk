@@ -7,7 +7,6 @@ function block_talk_enqueue_styles() {
 }
 
 add_editor_style('style.css');
-add_image_size('hero', 1440);
 
 // Register a new ACF Block: https://www.advancedcustomfields.com/resources/acf_register_block/
 
