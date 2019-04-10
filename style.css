@@ -10,3 +10,35 @@
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  block-talk
 */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-position: center;
+  background-size: cover;
+  padding-bottom: 50px;
+}
+
+.hero__text {
+  max-width: 600px;
+  text-align: center;
+}
+
+.hero__title:before {
+  display: none;
+}
+
+.hero a.hero__cta {
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  transition: background-color .3s;
+}
+
+.hero a.hero__cta:hover,
+.hero a.hero__cta:focus {
+  background: #666;
+}
