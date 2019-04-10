@@ -1,20 +1,28 @@
 <?php
   $image = get_field('image');
-  $cta = get_field('call_to_action');
+  $call_to_action = get_field('call_to_action');
 ?>
 
-<section class="hero align<?php echo $block['align']; ?>" style="background-image: url(<?php echo $image['sizes']['hero']; ?>);">
+<section class="hero alignfull" style="background-image: url(<?php echo $image['sizes']['hero']; ?>);">
+  <div class="hero__overlay"></div>
+
   <div class="hero__text">
-    <h2 class="hero__title">
-      <?php the_field('title'); ?>
-    </h2>
+    <?php if(get_field('body')) { ?>
+      <h2 class="hero__title">
+        <?php the_field('title'); ?>
+      </h2>
+    <?php } ?>
 
-    <div class="hero__body">
-      <?php the_field('body'); ?>
-    </div>
+    <?php if(get_field('body')) { ?>
+      <div class="hero__body">
+        <?php the_field('body'); ?>
+      </div>
+    <?php } ?>
 
-    <a href="<?php echo $cta['url']; ?>" target="<?php echo $cta['target']; ?>" class="hero__cta">
-      <?php echo $cta['title']; ?>
-    </a>
+    <?php if($call_to_action) { ?>
+      <a target="<?php echo $call_to_action['target']; ?>" href="<?php echo $call_to_action['title']; ?>" class="hero__cta">
+        <?php echo $call_to_action['title']; ?>
+      </a>
+    <?php } ?>
   </div>
 </section>
